@@ -10,18 +10,18 @@ import SwiftUI
 struct FriendDetailView: View {
     
     @State var isSaved = false
-    @Binding var friend: Friend
+    @Binding var friends: Friend
     
     var body: some View {
         Form {
-            TextField("edit the name", text: $friend.name)
+            TextField("edit the name", text: $friends.name)
                 .textFieldStyle(.roundedBorder)
                 .padding()
-            TextField("edit the school", text: $friend.school)
+            TextField("edit the school", text: $friends.school)
                 .textFieldStyle(.roundedBorder)
                 .padding()
             Button {
-                $friend.$isSaved = true
+                $friends.$isSaved = true
             } label: {
                 Text("save")
                     .foregroundColor(.blue)

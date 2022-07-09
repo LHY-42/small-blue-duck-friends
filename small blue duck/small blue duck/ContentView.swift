@@ -8,24 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
-    var Friend = [
-        Friend(name: "Yuhan", attack: 10000000.0, defence: 100000.0, school: "MGS")
+    
+    var friends = [
+        Friend(name: "Yuhan", school: "MGS", attack: 10000000.0, defence: 100000.0)
     ]
+    
+    @State var isSheetGiven = false
+    
     var body: some View {
             NavigationView {
-                List(Friends) { friend in
-                    NavigationLink(destination: FriendDetailView(friend: friend)) {
+                List(friends) { $friend in
+                    NavigationLink {
+                        FriendDetailView(friend: $friend)
+                    } label: {
                         HStack {
-                            Image(systemName: friend.icon)
+                            Image(systemName: "sun")
                             VStack(alignment: .leading) {
-                                Text(friend.name)
+                                Text(Friend.name)
                                     .bold()
-                                Text(friend.school)
+                                Text(Friend.school)
                             }
                         }
                     }
                 }
                 .navigationTitle("Friends")
+            }
+            .sheet(isPresented: $isSheetGiven) {
+                NewFriendView(friends: $friend)
             }
         }
 }

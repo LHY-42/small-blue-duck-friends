@@ -9,18 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var Friend = FriendManager()
+    @StateObject var friendManager = FriendManager()
     
     var body: some View {
             NavigationView {
-                List(FriendManager.friends) { friend in
-                    NavigationLink(destination: FriendDetailView(friend: FriendManager.friends)) {
+                List(friendManager.friends) { friend in
+                    NavigationLink(destination:
+                                    FriendDetailView(friend: $friend))
+                    {
                         HStack {
-                            Image(systemName: Friend.icon)
+                            
                             VStack(alignment: .leading) {
-                                Text(Friend.name)
+                                Text(friend.name)
                                     .bold()
-                                Text(Friend.school)
+                                Text(friend.school)
                             }
                         }
                     }

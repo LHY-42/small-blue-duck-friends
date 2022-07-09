@@ -10,7 +10,9 @@ import SwiftUI
 struct ContentView: View {
     
     var friends = [
-        Friend(name: "Yuhan", school: "MGS", attack: 10000000.0, defence: 100000.0)
+        Friend(name: "Yuhan", school: "MGS", attack: 10000000.0, defence: 100000.0),
+        Friend(name: "Haoyuan", school: "idk", attack: 10.0, defence: 5.0),
+        Friend(name: "Sairam", school: "SST", attack: 8.0, defence: 10.0)
     ]
     
     @State var isSheetGiven = false
@@ -27,6 +29,8 @@ struct ContentView: View {
                                 Text(Friend.name)
                                     .bold()
                                 Text(Friend.school)
+                                Text(Friend.attack)
+                                Text(Friend.defence)
                             }
                         }
                     }

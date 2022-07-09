@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0529063D2879364C0067DEAD /* FriendsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529063C2879364C0067DEAD /* FriendsManager.swift */; };
 		20FC50EE2879254700206359 /* small_blue_duckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC50ED2879254700206359 /* small_blue_duckApp.swift */; };
 		20FC50F02879254700206359 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC50EF2879254700206359 /* ContentView.swift */; };
 		20FC50F22879254B00206359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20FC50F12879254B00206359 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0529063C2879364C0067DEAD /* FriendsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsManager.swift; sourceTree = "<group>"; };
 		20FC50EA2879254700206359 /* small blue duck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "small blue duck.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20FC50ED2879254700206359 /* small_blue_duckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = small_blue_duckApp.swift; sourceTree = "<group>"; };
 		20FC50EF2879254700206359 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,13 +59,14 @@
 		20FC50EC2879254700206359 /* small blue duck */ = {
 			isa = PBXGroup;
 			children = (
+				20FC50FF28792CC600206359 /* data.swift */,
 				20FC50ED2879254700206359 /* small_blue_duckApp.swift */,
 				20FC50EF2879254700206359 /* ContentView.swift */,
+				20FC50FD28792C5C00206359 /* NewFriendView.swift */,
+				5F8A6A1D287932CE00CEE7B1 /* FriendDetailView.swift */,
+				0529063C2879364C0067DEAD /* FriendsManager.swift */,
 				20FC50F12879254B00206359 /* Assets.xcassets */,
 				20FC50F32879254B00206359 /* Preview Content */,
-				20FC50FD28792C5C00206359 /* NewFriendView.swift */,
-				20FC50FF28792CC600206359 /* data.swift */,
-				5F8A6A1D287932CE00CEE7B1 /* FriendDetailView.swift */,
 			);
 			path = "small blue duck";
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				5F8A6A1E287932CE00CEE7B1 /* FriendDetailView.swift in Sources */,
 				20FC50F02879254700206359 /* ContentView.swift in Sources */,
 				20FC50FE28792C5C00206359 /* NewFriendView.swift in Sources */,
+				0529063D2879364C0067DEAD /* FriendsManager.swift in Sources */,
 				20FC50EE2879254700206359 /* small_blue_duckApp.swift in Sources */,
 				20FC510028792CC600206359 /* data.swift in Sources */,
 			);

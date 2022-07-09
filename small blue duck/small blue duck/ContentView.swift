@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    var Friend = [
-        Friend(name: "Yuhan", attack: 10000000.0, defence: 100000.0, school: "MGS")
-    ]
+    
+    @StateObject var Friend = FriendManager()
+    
     var body: some View {
             NavigationView {
-                List(Friends) { friend in
-                    NavigationLink(destination: FriendDetailView(friend: friend)) {
+                List(friends) { friend in
+                    NavigationLink(destination: FriendDetailView(friend: FriendManager.friends)) {
                         HStack {
-                            Image(systemName: friend.icon)
+                            Image(systemName: Friend.icon)
                             VStack(alignment: .leading) {
-                                Text(friend.name)
+                                Text(Friend.name)
                                     .bold()
-                                Text(friend.school)
+                                Text(Friend.school)
                             }
                         }
                     }

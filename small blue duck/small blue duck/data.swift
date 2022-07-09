@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Friend {
+struct Friend: Identifiable, Codable {
+    var id = UUID()
+    
     var name: String
     var school: String
     var attack: Float

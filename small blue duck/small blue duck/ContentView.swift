@@ -13,21 +13,38 @@ struct ContentView: View {
     
     var body: some View {
             NavigationView {
-                List(friendManager.friends) { friend in
-                    NavigationLink(destination:
-                                    FriendDetailView(friend: $friend))
-                    {
+                List(friends) { $friend in
+                    NavigationLink {
+                        FriendDetailView(friend: $friend)
+                    } label: {
                         HStack {
                             
                             VStack(alignment: .leading) {
-                                Text(friend.name)
+                                Text(Friend.name)
                                     .bold()
-                                Text(friend.school)
+                                Text(Friend.school)
+                                Text(Friend.attack)
+                                Text(Friend.defence)
                             }
                         }
                     }
                 }
                 .navigationTitle("Friends")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        EditButton()
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            isSheetGiven = true
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                    }
+                }
+            }
+            .sheet(isPresented: $isSheetGiven) {
+                NewFriendView(friends: $friend)
             }
         }
 }

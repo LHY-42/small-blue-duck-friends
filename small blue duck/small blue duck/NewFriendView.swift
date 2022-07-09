@@ -9,14 +9,25 @@ import SwiftUI
 
 struct NewFriendView: View {
     
-    @State var
+    @State var friendName = ""
+    @Binding var friends: [Friend]
+    
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            TextField("enter friend name", text: $friendName)
+            Button("save friend") {
+                let friend = Friend(name: friendName, stats: friendStat, school: friendSchool, text: friendPhrase)
+                friends.append(friend)
+                dismiss()
+            }
+        }
     }
 }
 
 struct NewFriendView_Previews: PreviewProvider {
     static var previews: some View {
-        NewFriendView()
+        NewFriendView(friends: .constant([]))
     }
 }

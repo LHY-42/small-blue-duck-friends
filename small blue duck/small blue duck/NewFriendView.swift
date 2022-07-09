@@ -10,15 +10,41 @@ import SwiftUI
 struct NewFriendView: View {
     
     @State var friendName = ""
+    @State var friendSchool = ""
+    @State var friendAttack = 0.0
+    @State var friendDefence = 0.0
     @Binding var friends: [Friend]
+    
+    @State private var isEditing = false
     
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
         Form {
-            TextField("enter friend name", text: $friendName)
+            TextField("enter name", text: $friendName)
+            TextField("enter school", text: $friendSchool)
+            Slider(
+                value: $friendAttack,
+                in: 0...100,
+                onEditingChanged: { editing in
+                    isEditing = editing
+                }
+            )
+            Text("\(friendAttack)")
+                .foregroundColor(isEditing ? .red : .blue)
+            
+            Slider(
+                value: $friendDefence,
+                in: 0...100,
+                onEditingChanged: { editing in
+                    isEditing = editing
+                }
+            )
+            Text("\(friendDefence)")
+                .foregroundColor(isEditing ? .red : .blue)
+            
             Button("save friend") {
-                let friend = Friend(name: friendName, stats: friendStat, school: friendSchool, text: friendPhrase)
+                let friend = Friend(name: friendName, school: friendSchool, attack: friendAttack, defence: friendDefence, text: friendPhrase)
                 friends.append(friend)
                 dismiss()
             }

@@ -32,6 +32,18 @@ struct ContentView: View {
                     }
                 }
                 .navigationTitle("Friends")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        EditButton()
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            isSheetGiven = true
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                    }
+                }
             }
             .sheet(isPresented: $isSheetGiven) {
                 NewFriendView(friends: $friend)

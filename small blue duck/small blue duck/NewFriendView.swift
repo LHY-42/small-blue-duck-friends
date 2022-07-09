@@ -44,7 +44,7 @@ struct NewFriendView: View {
                 .foregroundColor(isEditing ? .red : .blue)
             
             Button("save friend") {
-                let friend = Friend(name: friendName, school: friendSchool, attack: friendAttack, defence: friendDefence, text: friendPhrase)
+                let friend = Friend(name: friendName, school: friendSchool, attack: Float(friendAttack), defence: Float(friendDefence))
                 friends.append(friend)
                 dismiss()
             }

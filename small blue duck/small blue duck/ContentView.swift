@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
             NavigationView {
-                List(friends) { friend in
+                List(FriendManager.friends) { friend in
                     NavigationLink(destination: FriendDetailView(friend: FriendManager.friends)) {
                         HStack {
                             Image(systemName: Friend.icon)

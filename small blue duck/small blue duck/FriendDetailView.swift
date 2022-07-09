@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct FriendDetailView: View {
-    @Binding var friend: Friend;
+    
+    @State var isSaved = false
+    @Binding var friend: Friend
+    
     var body: some View {
-        List{
-            ForEach(Friend){
-                
+        Form {
+            TextField("edit the name", text: $friend.name)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            TextField("edit the school", text: $friend.school)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            Button {
+                $friend.$isSaved = true
+            } label: {
+                Text("save")
+                    .foregroundColor(.blue)
             }
         }
 
@@ -22,6 +34,6 @@ struct FriendDetailView: View {
 
 struct FriendDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendDetailView()
+        FriendDetailView(friend: .constant(Friend(name: "sa", school: "dsd")))
     }
 }

@@ -13,6 +13,7 @@
 		20FC50F52879254B00206359 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20FC50F42879254B00206359 /* Preview Assets.xcassets */; };
 		20FC50FE28792C5C00206359 /* NewFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC50FD28792C5C00206359 /* NewFriendView.swift */; };
 		20FC510028792CC600206359 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC50FF28792CC600206359 /* data.swift */; };
+		5F8A6A1E287932CE00CEE7B1 /* FriendDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A6A1D287932CE00CEE7B1 /* FriendDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		20FC50F42879254B00206359 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		20FC50FD28792C5C00206359 /* NewFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFriendView.swift; sourceTree = "<group>"; };
 		20FC50FF28792CC600206359 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
+		5F8A6A1D287932CE00CEE7B1 /* FriendDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				20FC50F32879254B00206359 /* Preview Content */,
 				20FC50FD28792C5C00206359 /* NewFriendView.swift */,
 				20FC50FF28792CC600206359 /* data.swift */,
+				5F8A6A1D287932CE00CEE7B1 /* FriendDetailView.swift */,
 			);
 			path = "small blue duck";
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F8A6A1E287932CE00CEE7B1 /* FriendDetailView.swift in Sources */,
 				20FC50F02879254700206359 /* ContentView.swift in Sources */,
 				20FC50FE28792C5C00206359 /* NewFriendView.swift in Sources */,
 				20FC50EE2879254700206359 /* small_blue_duckApp.swift in Sources */,

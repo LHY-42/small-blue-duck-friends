@@ -9,7 +9,7 @@ import Foundation
 
 struct Friend {
     var name: String
-    var attack: Double
-    var defence: Double
     var school: String
+    var attack: Float
+    var defence: Float
 }

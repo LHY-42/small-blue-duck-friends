@@ -10,23 +10,28 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject var friendManager = FriendManager()
+    @State var isSheetGiven = false
     
     var body: some View {
             NavigationView {
-                List(friends) { $friend in
-                    NavigationLink {
-                        FriendDetailView(friend: $friend)
-                    } label: {
-                        HStack {
-                            
-                            VStack(alignment: .leading) {
-                                Text(Friend.name)
-                                    .bold()
-                                Text(Friend.school)
-                                Text(Friend.attack)
-                                Text(Friend.defence)
+                List {
+                    
+                    ForEach($friendManager.friends) {
+                        $friend in
+                        NavigationLink {
+                            FriendDetailView(friend: $friend)
+                        } label: {
+                            HStack {
+                                
+                                VStack(alignment: .leading) {
+                                    Text(friend.name)
+                                        .bold()
+                                    Text(friend.school)
+                                    Text(friend.attack)
+                                    Text(friend.defence)
+                                }
                             }
-                        }
+                    }
                     }
                 }
                 .navigationTitle("Friends")
@@ -44,7 +49,7 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $isSheetGiven) {
-                NewFriendView(friends: $friend)
+                NewFriendView(friends: $friendManager.friends)
             }
         }
 }

@@ -20,8 +20,15 @@ struct FriendDetailView: View {
             TextField("edit the school", text: $friends.school)
                 .textFieldStyle(.roundedBorder)
                 .padding()
+            TextField("edit the school", text: $friends.attack)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            TextField("edit the school", text: $friends.defence)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            
             Button {
-                $friends.$isSaved = true
+                friends.isSaved = true
             } label: {
                 Text("save")
                     .foregroundColor(.blue)
@@ -34,6 +41,6 @@ struct FriendDetailView: View {
 
 struct FriendDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendDetailView(friends: .constant(Friend(name: "sa", school: "dsd", attack: 13, defence: 69)))
+        FriendDetailView(friends: .constant(Friend(name: "TEst", school: "yut", attack: 50, defence: 30, isSaved: true)))
     }
 }

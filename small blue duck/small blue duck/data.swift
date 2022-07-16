@@ -14,5 +14,6 @@ struct Friend: Identifiable, Codable {
     var school: String
     var attack: Float
     var defence: Float
-    var icon: String
+    var isSaved: Bool
+    //var icon: String
 }

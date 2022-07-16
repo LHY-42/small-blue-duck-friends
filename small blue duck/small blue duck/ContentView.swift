@@ -15,11 +15,9 @@ struct ContentView: View {
     var body: some View {
             NavigationView {
                 List {
-                    
-                    ForEach($friendManager.friends) {
-                        $friend in
+                    ForEach($friendManager.friends) { $friend in
                         NavigationLink {
-                            FriendDetailView(friend: $friend)
+                            FriendDetailView(friends: $friend)
                         } label: {
                             HStack {
                                 
@@ -27,8 +25,8 @@ struct ContentView: View {
                                     Text(friend.name)
                                         .bold()
                                     Text(friend.school)
-                                    Text(friend.attack)
-                                    Text(friend.defence)
+                                    Float(friend.attack)
+                                    Float(friend.defence)
                                 }
                             }
                     }
